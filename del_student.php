@@ -1,8 +1,10 @@
 <?php
 $ID = $_GET["ID"];
-$name = $_GET["name"];
-$arrne[$ID] = $name;
 $arr = json_decode(file_get_contents("students.json"), true);
-$arr[$ID] = $name;
+echo $ID.";";
+foreach($arr as $key => $val){
+  if($key == $ID)
+    unset($arr[$key]);
+}
 file_put_contents("students.json", json_encode($arr));
 ?>

@@ -27,7 +27,15 @@ $('#ajax-add button[type = submit]').click((event) => {
     $.get(('add_stu.php'), {
       ID: $('#ajax-add input[name=ID]').val(),
       name: $('#ajax-add input[name=name]').val(),
-    }, (data) =>{
-      $('#ajax-output').html(data)
+    }, (data) => {
+    })
+})
+
+$('#ajax-del button[type = submit]').click((event) => {
+  event.preventDefault()
+
+    $.get(('del_student.php'), {
+      ID: $('#ajax-del input[name=ID]').val(),
+    }, (data) => {
     })
 })
